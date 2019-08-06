@@ -8,6 +8,9 @@ import javafx.scene.control.TextField;
 import sample.model.Pizza;
 import sample.model.Pizzaria;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class Controller {
 
     @FXML
@@ -25,13 +28,24 @@ public class Controller {
     @FXML
     private ListView<Pizza> ltvListaPedido;
 
+    public void initialize() throws IOException, ClassNotFoundException {
+        try{
+            Pizzaria.getInstance().Carregar();
+        }catch(Exception e){
+
+        }
+    }
+
     @FXML
-    private void cadastrarPizza(){
+    private void cadastrarPizza() throws Exception{
         String sabor;
         double valor;
 
         valor = Double.valueOf(tfValor.getText());
         sabor = tfSabor.getText();
+
+        Pizzaria.getInstance().Carregar();
+        Pizzaria.getInstance().Salvar();
 
         Pizzaria.getInstance().cadastraPizza(sabor, valor);
         ltvListaSabores.getItems().clear();

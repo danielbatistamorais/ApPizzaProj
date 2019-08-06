@@ -26,7 +26,7 @@
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Button layoutX="19.0" layoutY="184.0" mnemonicParsing="false" onAction="#cadastrarPizza" prefHeight="60.0" prefWidth="186.0" text="Cadastrar Sabor">
+      <Button layoutX="19.0" layoutY="177.0" mnemonicParsing="false" onAction="#cadastrarPizza" prefHeight="60.0" prefWidth="186.0" text="Cadastrar Sabor">
          <font>
             <Font size="19.0" />
          </font></Button>
@@ -34,18 +34,28 @@
          <font>
             <Font size="15.0" />
          </font></Button>
-      <ListView fx:id="ltvListaPedido" layoutX="501.0" layoutY="71.0" prefHeight="331.0" prefWidth="229.0" />
+      <ListView fx:id="ltvListaPedido" layoutX="501.0" layoutY="71.0" prefHeight="282.0" prefWidth="229.0" />
       <Label layoutX="282.0" layoutY="14.0" prefHeight="51.0" prefWidth="133.0" text="Sabores" textAlignment="CENTER">
          <font>
             <Font size="32.0" />
          </font>
       </Label>
-      <Button layoutX="19.0" layoutY="287.0" mnemonicParsing="false" onAction="#fecharPedido" prefHeight="95.0" prefWidth="186.0" text="Fechar Pedido">
+      <Button layoutX="19.0" layoutY="342.0" mnemonicParsing="false" onAction="#fecharPedido" prefHeight="60.0" prefWidth="186.0" text="Fechar Pedido">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
       <TextField fx:id="tfSabor" layoutX="19.0" layoutY="79.0" prefHeight="40.0" prefWidth="186.0" promptText="Sabor" />
       <TextField fx:id="tfValor" layoutX="19.0" layoutY="130.0" prefHeight="40.0" prefWidth="186.0" promptText="Valor" />
+      <Button layoutX="19.0" layoutY="258.0" mnemonicParsing="false" onAction="#abrirPedido" prefHeight="60.0" prefWidth="186.0" text="Abrir Pedido">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Label fx:id="lbValorTotal" layoutX="523.0" layoutY="362.0" prefHeight="40.0" prefWidth="186.0" text="Valor total: 00.00R$">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

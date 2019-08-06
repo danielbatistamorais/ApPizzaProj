@@ -4,8 +4,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import sample.control.Alertas;
 
+import java.io.*;
+import java.util.ArrayList;
+
 public class Pizzaria extends Alertas {
 
+
+    private static String FILE="sabores.bin";
     private ObservableList<Pizza> sabores;
     private Pedido pedido;
 
@@ -82,5 +87,48 @@ public class Pizzaria extends Alertas {
             return FXCollections.emptyObservableList();
         }
     }
+
+    public void Carregar() throws IOException, ClassNotFoundException{
+        sabores.clear();
+
+
+        try{
+            ObjectInputStream ois = new ObjectInputStream(
+                    new FileInputStream(
+                            new File(FILE)
+                    )
+            );
+
+            ArrayList<Pizza> temp = (ArrayList)ois.readObject();
+
+            sabores.addAll(temp);
+
+            ois.close();
+        }catch(Exception e){
+
+        }
+
+    }
+
+    public void Salvar() throws IOException {
+
+        try{
+            ObjectOutputStream oos = new ObjectOutputStream(
+                    new FileOutputStream(
+                            new File(FILE))
+            );
+
+            ArrayList<Pizza> temp = new ArrayList<>();
+            temp.addAll(sabores);
+
+            oos.writeObject(temp);
+
+            oos.close();
+        }catch(Exception e){
+
+        }
+
+    }
+
 
 }
