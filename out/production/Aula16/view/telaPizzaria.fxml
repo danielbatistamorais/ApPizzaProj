@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="464.0" prefWidth="739.0" styleClass="root" stylesheets="@../css/base.css" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.control.Controller">
+<AnchorPane prefHeight="464.0" prefWidth="739.0" styleClass="root" stylesheets="/css/background.css" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.control.Controller">
    <children>
       <Separator layoutX="217.0" orientation="VERTICAL" prefHeight="464.0" prefWidth="17.0" />
       <Label layoutX="14.0" prefHeight="60.0" prefWidth="196.0" text="Zapizza" textAlignment="CENTER">
@@ -26,9 +26,9 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Label layoutX="561.0" layoutY="20.0" text="Pedido" textAlignment="CENTER">
+      <Label layoutX="549.0" layoutY="11.0" prefHeight="41.0" prefWidth="133.0" text="Pedido" textAlignment="CENTER">
          <font>
-            <Font size="32.0" />
+            <Font name="EB Garamond 12 Italic" size="47.0" />
          </font>
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
@@ -55,7 +55,7 @@
       <ListView fx:id="ltvListaPedido" layoutX="501.0" layoutY="71.0" prefHeight="282.0" prefWidth="229.0" />
       <Label layoutX="282.0" layoutY="14.0" prefHeight="51.0" prefWidth="133.0" text="Sabores" textAlignment="CENTER">
          <font>
-            <Font size="32.0" />
+            <Font name="EB Garamond 08 Italic" size="46.0" />
          </font>
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
@@ -78,18 +78,10 @@
             <Font size="19.0" />
          </font>
       </Button>
-      <Label fx:id="lbValorTotal" layoutX="523.0" layoutY="362.0" prefHeight="40.0" prefWidth="186.0" text="Valor total: 00.00R$">
+      <Label fx:id="lbValorTotal" layoutX="507.0" layoutY="362.0" prefHeight="40.0" prefWidth="217.0" text="Valor total: R$00.00" textFill="YELLOW" underline="true">
          <font>
-            <Font size="16.0" />
+            <Font name="EB Garamond 12 Italic" size="28.0" />
          </font>
-         <textFill>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-               <stops>
-                  <Stop color="#fc0707" />
-                  <Stop color="BLACK" offset="1.0" />
-               </stops>
-            </RadialGradient>
-         </textFill>
       </Label>
    </children>
 </AnchorPane>
