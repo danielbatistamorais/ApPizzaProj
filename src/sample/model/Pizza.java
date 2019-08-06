@@ -27,7 +27,7 @@ public class Pizza {
 
     @Override
     public String toString() {
-        return  "~Pizza~" +
+        return  "~Pizza~\n" +
                 "Sabor:" + sabor + '\n' +
                 "Valor:" + valor;
     }

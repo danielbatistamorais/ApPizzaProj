@@ -2,8 +2,9 @@ package sample.model;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import sample.control.Alertas;
 
-public class Pizzaria {
+public class Pizzaria extends Alertas {
 
     private ObservableList<Pizza> sabores;
     private Pedido pedido;
@@ -21,18 +22,16 @@ public class Pizzaria {
     public void cadastraPizza(String sabor, Double valor){
         Pizza p = new Pizza(sabor, valor);
         sabores.add(p);
+        System.out.println(sabores);
     }
 
-    public ObservableList<Pizza> getSabores() {
-        return sabores;
-    }
-
-    public void abrirPedido() throws Exception {
+    public void abrirPedido(){
         if(pedido == null){
             pedido = new Pedido();
         }
-
-        throw new Exception("Já Existe um pedido aberto!");
+        else{
+            pedidoJaAberto();
+        }
     }
 
     public void removerPizza(Pizza p){
@@ -41,23 +40,26 @@ public class Pizzaria {
         }
     }
 
-    public void incluirPizza(Pizza p) throws Exception {
+    public void incluirPizza(Pizza p){
         if(pedido != null){
             pedido.addPizza(p);
         }
-
-        throw new Exception("Pedido fechado!");
+        else{
+            pedidoNaoAberto();
+        }
     }
 
-    public double fecharPedido() throws Exception {
+    public double fecharPedido(){
         double valor;
         if(pedido != null){
             valor = pedido.getValorTotal();
             pedido = null;
             return valor;
         }
-
-        throw new Exception("Pedido fechado!");
+        else{
+            pedidoNaoAberto();
+        }
+        return 0.0;
     }
 
     public ObservableList listaSabores(){
@@ -76,7 +78,9 @@ public class Pizzaria {
         if(pedido != null){
             return pedido.listaPizzas();
         }
-        return FXCollections.emptyObservableList();
+        else{
+            return FXCollections.emptyObservableList();
+        }
     }
 
 }
