@@ -24,10 +24,12 @@ public class Pizzaria extends Alertas {
         return instance;
     }
 
-    public void cadastraPizza(String sabor, Double valor){
+    public void cadastraPizza(String sabor, Double valor) throws Exception{
         Pizza p = new Pizza(sabor, valor);
         sabores.add(p);
         System.out.println(sabores);
+
+        Salvar();
     }
 
     public void abrirPedido(){

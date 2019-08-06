@@ -44,9 +44,6 @@ public class Controller {
         valor = Double.valueOf(tfValor.getText());
         sabor = tfSabor.getText();
 
-        Pizzaria.getInstance().Carregar();
-        Pizzaria.getInstance().Salvar();
-
         Pizzaria.getInstance().cadastraPizza(sabor, valor);
         ltvListaSabores.getItems().clear();
         ltvListaSabores.getItems().addAll(Pizzaria.getInstance().listaSabores());

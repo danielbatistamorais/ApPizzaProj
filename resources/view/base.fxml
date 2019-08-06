@@ -10,7 +10,6 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="sample.control.JanelaBase"
             prefHeight="300.0" prefWidth="750.0"
-            fx:id="janelaBase"
->
+            fx:id="janelaBase">
 
 </StackPane>
