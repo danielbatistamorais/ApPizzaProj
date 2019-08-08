@@ -29,11 +29,8 @@ public class Controller {
     private ListView<Pizza> ltvListaPedido;
 
     public void initialize() throws IOException, ClassNotFoundException {
-        try{
-            Pizzaria.getInstance().Carregar();
-        }catch(Exception e){
-
-        }
+        Pizzaria.getInstance().Carregar();
+        //ltvListaSabores.getItems().addAll(Pizzaria.getInstance().listaSabores());
     }
 
     @FXML
@@ -45,7 +42,7 @@ public class Controller {
         sabor = tfSabor.getText();
 
         Pizzaria.getInstance().cadastraPizza(sabor, valor);
-        ltvListaSabores.getItems().clear();
+
         ltvListaSabores.getItems().addAll(Pizzaria.getInstance().listaSabores());
     }
 

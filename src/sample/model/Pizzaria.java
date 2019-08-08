@@ -27,9 +27,9 @@ public class Pizzaria extends Alertas {
     public void cadastraPizza(String sabor, Double valor) throws Exception{
         Pizza p = new Pizza(sabor, valor);
         sabores.add(p);
-        System.out.println(sabores);
 
         Salvar();
+        Carregar();
     }
 
     public void abrirPedido(){
@@ -70,7 +70,7 @@ public class Pizzaria extends Alertas {
     }
 
     public ObservableList listaSabores(){
-        return sabores;
+        return FXCollections.unmodifiableObservableList(sabores);
     }
 
     public double valorPedido(){
@@ -91,9 +91,6 @@ public class Pizzaria extends Alertas {
     }
 
     public void Carregar() throws IOException, ClassNotFoundException{
-        sabores.clear();
-
-
         try{
             ObjectInputStream ois = new ObjectInputStream(
                     new FileInputStream(
@@ -107,13 +104,11 @@ public class Pizzaria extends Alertas {
 
             ois.close();
         }catch(Exception e){
-
+            System.out.println("erro ao carregar");
         }
-
     }
 
     public void Salvar() throws IOException {
-
         try{
             ObjectOutputStream oos = new ObjectOutputStream(
                     new FileOutputStream(
@@ -127,10 +122,7 @@ public class Pizzaria extends Alertas {
 
             oos.close();
         }catch(Exception e){
-
+            System.out.println("erro ao salvar");
         }
-
     }
-
-
 }

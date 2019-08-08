@@ -1,10 +1,12 @@
 package sample.model;
 
-public class Pizza {
+import java.io.Serializable;
+
+public class Pizza implements Serializable {
     private String sabor;
     private double valor;
 
-    public Pizza(String sabor, double valor) {
+    public Pizza(String sabor, double valor){
         this.sabor = sabor;
         this.valor = valor;
     }
