@@ -91,6 +91,8 @@ public class Pizzaria extends Alertas {
     }
 
     public void Carregar() throws IOException, ClassNotFoundException{
+        sabores.clear();
+
         try{
             ObjectInputStream ois = new ObjectInputStream(
                     new FileInputStream(

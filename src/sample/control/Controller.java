@@ -30,7 +30,7 @@ public class Controller {
 
     public void initialize() throws IOException, ClassNotFoundException {
         Pizzaria.getInstance().Carregar();
-        //ltvListaSabores.getItems().addAll(Pizzaria.getInstance().listaSabores());
+        ltvListaSabores.getItems().addAll(Pizzaria.getInstance().listaSabores());
     }
 
     @FXML
@@ -43,6 +43,7 @@ public class Controller {
 
         Pizzaria.getInstance().cadastraPizza(sabor, valor);
 
+        ltvListaSabores.getItems().clear();
         ltvListaSabores.getItems().addAll(Pizzaria.getInstance().listaSabores());
     }
 
@@ -79,7 +80,4 @@ public class Controller {
     private void abrirPedido(){
         Pizzaria.getInstance().abrirPedido();
     }
-
-
-
 }
