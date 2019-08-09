@@ -36,7 +36,24 @@ public class Alertas {
 
         }
     }
+    protected void erroAoCadastrar(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Insira um valor e um sabor para a pizza!");
 
+        Optional<ButtonType> resultado = alert.showAndWait();
 
+        if(resultado.isPresent() && resultado.get() == ButtonType.OK){
+
+        }
+    }
+
+    protected void cadastradoComSucesso(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Pizza cadastrada com sucesso!");
+
+        Optional<ButtonType> resultado = alert.showAndWait();
+
+        if(resultado.isPresent() && resultado.get() == ButtonType.OK){
+
+        }
+    }
 
 }

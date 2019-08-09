@@ -25,11 +25,16 @@ public class Pizzaria extends Alertas {
     }
 
     public void cadastraPizza(String sabor, Double valor) throws Exception{
-        Pizza p = new Pizza(sabor, valor);
-        sabores.add(p);
-
-        Salvar();
-        Carregar();
+        if(sabor != null && valor != 0.0){
+            Pizza p = new Pizza(sabor, valor);
+            sabores.add(p);
+            Salvar();
+            Carregar();
+            cadastradoComSucesso();
+        }
+        else{
+            erroAoCadastrar();
+        }
     }
 
     public void abrirPedido(){
@@ -61,6 +66,7 @@ public class Pizzaria extends Alertas {
         if(pedido != null){
             valor = pedido.getValorTotal();
             pedido = null;
+            pedidoFechado();
             return valor;
         }
         else{

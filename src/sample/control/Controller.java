@@ -38,7 +38,12 @@ public class Controller {
         String sabor;
         double valor;
 
-        valor = Double.valueOf(tfValor.getText());
+        if(!tfValor.getText().isEmpty()){
+            valor = Double.valueOf(tfValor.getText());
+        }
+        else{
+            valor = 0.0;
+        }
         sabor = tfSabor.getText();
 
         Pizzaria.getInstance().cadastraPizza(sabor, valor);
