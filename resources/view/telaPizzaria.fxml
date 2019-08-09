@@ -10,7 +10,8 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="464.0" prefWidth="739.0" styleClass="root" stylesheets="/css/background.css" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.control.Controller">
+<AnchorPane prefHeight="464.0" prefWidth="739.0" styleClass="root" stylesheets="/css/background.css" xmlns="http://javafx.com/javafx/8.0.999-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.control.Controller">
    <children>
       <Separator layoutX="217.0" orientation="VERTICAL" prefHeight="464.0" prefWidth="17.0" />
       <Label layoutX="14.0" prefHeight="60.0" prefWidth="196.0" text="Zapizza" textAlignment="CENTER">

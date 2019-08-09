@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import sample.Navegador;
 import sample.model.Pizza;
 import sample.model.Pizzaria;
 
@@ -87,16 +88,8 @@ public class Controller {
 
     @FXML
     private void verClientes(){
-        Dialog<ButtonType> dialog = new Dialog<>();
-
         try{
-            FXMLLoader loader = new FXMLLoader();
-
-            loader.setLocation(getClass().getResource("../resources/view/menuClientes.fxml"));
-
-            Parent content = loader.load();
-
-            dialog.getDialogPane().setContent(content);
+            Navegador.loadJanelaSolta(Navegador.MENU_CLIENTES);
 
         }catch(Exception e){
             System.out.println("a");
