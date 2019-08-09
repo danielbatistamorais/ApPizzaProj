@@ -1,10 +1,9 @@
 package sample.control;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.control.*;
 import sample.model.Pizza;
 import sample.model.Pizzaria;
 
@@ -29,7 +28,7 @@ public class Controller {
     private ListView<Pizza> ltvListaPedido;
 
     public void initialize() throws IOException, ClassNotFoundException {
-        Pizzaria.getInstance().Carregar();
+        Pizzaria.getInstance().CarregarSabores();
         ltvListaSabores.getItems().addAll(Pizzaria.getInstance().listaSabores());
     }
 
@@ -84,5 +83,23 @@ public class Controller {
     @FXML
     private void abrirPedido(){
         Pizzaria.getInstance().abrirPedido();
+    }
+
+    @FXML
+    private void verClientes(){
+        Dialog<ButtonType> dialog = new Dialog<>();
+
+        try{
+            FXMLLoader loader = new FXMLLoader();
+
+            loader.setLocation(getClass().getResource("../resources/view/menuClientes.fxml"));
+
+            Parent content = loader.load();
+
+            dialog.getDialogPane().setContent(content);
+
+        }catch(Exception e){
+            System.out.println("a");
+        }
     }
 }

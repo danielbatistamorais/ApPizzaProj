@@ -44,7 +44,7 @@
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Button layoutX="19.0" layoutY="177.0" mnemonicParsing="false" onAction="#cadastrarPizza" prefHeight="60.0" prefWidth="186.0" text="Cadastrar Sabor">
+      <Button layoutX="19.0" layoutY="183.0" mnemonicParsing="false" onAction="#cadastrarPizza" prefHeight="54.0" prefWidth="186.0" text="Cadastrar Sabor">
          <font>
             <Font size="19.0" />
          </font></Button>
@@ -66,14 +66,14 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Button layoutX="19.0" layoutY="342.0" mnemonicParsing="false" onAction="#fecharPedido" prefHeight="60.0" prefWidth="186.0" text="Fechar Pedido">
+      <Button layoutX="19.0" layoutY="313.0" mnemonicParsing="false" onAction="#fecharPedido" prefHeight="54.0" prefWidth="186.0" text="Fechar Pedido">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
       <TextField fx:id="tfSabor" layoutX="19.0" layoutY="79.0" prefHeight="40.0" prefWidth="186.0" promptText="Sabor" />
       <TextField fx:id="tfValor" layoutX="19.0" layoutY="130.0" prefHeight="40.0" prefWidth="186.0" promptText="Valor" />
-      <Button layoutX="19.0" layoutY="258.0" mnemonicParsing="false" onAction="#abrirPedido" prefHeight="60.0" prefWidth="186.0" text="Abrir Pedido">
+      <Button layoutX="19.0" layoutY="248.0" mnemonicParsing="false" onAction="#abrirPedido" prefHeight="54.0" prefWidth="186.0" text="Abrir Pedido">
          <font>
             <Font size="19.0" />
          </font>
@@ -83,5 +83,10 @@
             <Font name="EB Garamond 12 Italic" size="28.0" />
          </font>
       </Label>
+      <Button layoutX="19.0" layoutY="380.0" mnemonicParsing="false" onAction="#verClientes" prefHeight="54.0" prefWidth="186.0" text="Ver Clientes">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

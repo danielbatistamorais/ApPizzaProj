@@ -11,13 +11,16 @@ public class Pizzaria extends Alertas {
 
 
     private static String FILE="sabores.bin";
+    private static String FILE_CLIENTES="clientes.bin";
     private ObservableList<Pizza> sabores;
+    private ObservableList<Cliente> clientes;
     private Pedido pedido;
 
     private static Pizzaria instance = new Pizzaria();
 
     private Pizzaria(){
         sabores = FXCollections.observableArrayList();
+        clientes = FXCollections.observableArrayList();
     }
 
     public static Pizzaria getInstance() {
@@ -28,8 +31,8 @@ public class Pizzaria extends Alertas {
         if(sabor != null && valor != 0.0){
             Pizza p = new Pizza(sabor, valor);
             sabores.add(p);
-            Salvar();
-            Carregar();
+            SalvarSabores();
+            CarregarSabores();
             cadastradoComSucesso();
         }
         else{
@@ -96,7 +99,11 @@ public class Pizzaria extends Alertas {
         }
     }
 
-    public void Carregar() throws IOException, ClassNotFoundException{
+    public ObservableList listaClientes(){
+        return FXCollections.unmodifiableObservableList(clientes);
+    }
+
+    public void CarregarSabores(){
         sabores.clear();
 
         try{
@@ -116,7 +123,7 @@ public class Pizzaria extends Alertas {
         }
     }
 
-    public void Salvar() throws IOException {
+    public void SalvarSabores(){
         try{
             ObjectOutputStream oos = new ObjectOutputStream(
                     new FileOutputStream(
@@ -131,6 +138,45 @@ public class Pizzaria extends Alertas {
             oos.close();
         }catch(Exception e){
             System.out.println("erro ao salvar");
+        }
+    }
+
+    public void SalvarClientes(){
+        try{
+            ObjectOutputStream oos = new ObjectOutputStream(
+                    new FileOutputStream(
+                            new File(FILE_CLIENTES))
+            );
+
+            ArrayList<Cliente> temp = new ArrayList<>();
+            temp.addAll(clientes);
+
+            oos.writeObject(temp);
+
+            oos.close();
+        }catch(Exception e){
+            System.out.println("Erro ao salvar clientes");
+        }
+    }
+
+    public void cadastraCliente(String nome, String numero, String endereco){
+
+        if(!nome.isEmpty() && !numero.isEmpty() && !endereco.isEmpty()){
+            Cliente c = new Cliente(nome, numero, endereco);
+            clientes.add(c);
+            clienteCadastradoComSucesso();
+        }
+        else{
+            erroAoCadastrarCliente();
+        }
+    }
+
+    public void removeClientes(Cliente c){
+
+        if(c != null){
+            if(confirmaRemocao(c.getNome())){
+                clientes.remove(c);
+            }
         }
     }
 }

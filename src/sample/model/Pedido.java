@@ -8,6 +8,7 @@ public class Pedido {
 
     private ObservableList<Pizza> pizzas;
     private double valorTotal;
+    private Cliente cliente;
 
     public Pedido() {
         pizzas = FXCollections.observableArrayList();
@@ -30,5 +31,13 @@ public class Pedido {
 
     public ObservableList listaPizzas(){
         return pizzas;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 }
